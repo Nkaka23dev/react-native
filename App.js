@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { View, StyleSheet, Text, SafeAreaView } from 'react-native'
+import Box from './components/Box'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaView>
+      {/* this the container of my app */}
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Here are some box of different Color
+        </Text>
+        {/* this are my different boxes */}
+        <View style={styles.parent}>
+          <Box name="Red" bgColor="red" />
+          <Box name="Blue" bgColor="blue" />
+          <Box name="Green" bgColor="green" />
+          <Box name="Yellow" bgColor="yellow" />
+        </View>
+      </View>
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  parent: {
+    marginTop: 20,
   },
-});
+  container: {
+    marginVertical: 60,
+  },
+  text: {
+    marginHorizontal: 20,
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+})
+
+
+
