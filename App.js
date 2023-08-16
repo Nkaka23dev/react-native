@@ -8,7 +8,7 @@ export default function App() {
       {/* this the container of my app */}
       <View style={styles.container}>
         <Text style={styles.text}>
-          Here are some box of different Color
+          Here are some box of different9 Color
         </Text>
         {/* this are my different boxes */}
         <View style={styles.parent}>
