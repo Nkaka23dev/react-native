@@ -17,29 +17,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 4
     },
-    box_text_color: {
-        color: 'white',
-        fontWeight: "600",
-    },
-    bg_red: {
-        backgroundColor: 'red',
-    },
-    bg_blue: {
-        backgroundColor: '#0000FF',
-    },
-    bg_magenta: {
-        backgroundColor: '#FF00FF',
-    },
-    bg_orange: {
-        backgroundColor: '#FFA500',
-    },
-    container: {
-        marginHorizontal: 20,
-        marginVertical: 50
-    },
-    myText: {
-        fontWeight: "900",
-        fontSize: 16,
-        paddingBottom: 5
-    }
 })
