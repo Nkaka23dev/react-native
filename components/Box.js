@@ -1,29 +1,45 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native'
 
-export default function Box({ name, bgColor }) {
-    const bgStyles = {
-        backgroundColor: bgColor,
+export default function Box({ colorName, hexColor }) {
+    const colors = {
+        backgroundColor: hexColor
     }
     return (
-        <View style={[styles.box, bgStyles]} >
-            <Text style={styles.boxText}>{name}</Text>
+        <View style={[styles.shared_padding, colors]}>
+            <Text style={styles.box_text_color}>{colorName}: {hexColor}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    boxText: {
+    shared_padding: {
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginTop: 4
+    },
+    box_text_color: {
         color: 'white',
-        fontSize: 18,
+        fontWeight: "600",
     },
-
-    box: {
-        paddingVertical: 10,
+    bg_red: {
+        backgroundColor: 'red',
+    },
+    bg_blue: {
+        backgroundColor: '#0000FF',
+    },
+    bg_magenta: {
+        backgroundColor: '#FF00FF',
+    },
+    bg_orange: {
+        backgroundColor: '#FFA500',
+    },
+    container: {
         marginHorizontal: 20,
-        marginVertical: 5,
-        justifyContent: 'center',
-        alignItems: 'center'
+        marginVertical: 50
     },
-});
-
+    myText: {
+        fontWeight: "900",
+        fontSize: 16,
+        paddingBottom: 5
+    }
+})

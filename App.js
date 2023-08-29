@@ -1,40 +1,46 @@
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native'
 import React from 'react'
-import { View, StyleSheet, Text, SafeAreaView } from 'react-native'
 import Box from './components/Box'
 
 export default function App() {
   return (
-    <SafeAreaView>
-      {/* this the container of my app */}
+    <SafeAreaView >
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Here are some box of different9 Color
-        </Text>
-        {/* this are my different boxes */}
-        <View style={styles.parent}>
-          <Box name="Red" bgColor="red" />
-          <Box name="Blue" bgColor="blue" />
-          <Box name="Green" bgColor="green" />
-          <Box name="Yellow" bgColor="yellow" />
-        </View>
+        <Text style={styles.myText}>Here are some boxes of different colors</Text>
+        <Box colorName="Red" hexColor="#FF0000" />
+        <Box colorName="blue" hexColor="#0000FF" />
+        <Box colorName="Magenta" hexColor="#FF00FF" />
+        <Box colorName="Orange" hexColor="#FFA500" />
       </View>
     </SafeAreaView>
   )
 }
 
+
 const styles = StyleSheet.create({
-  parent: {
-    marginTop: 20,
+  box_text_color: {
+    color: 'white',
+    fontWeight: "600",
+  },
+  bg_red: {
+    backgroundColor: 'red',
+  },
+  bg_blue: {
+    backgroundColor: '#0000FF',
+  },
+  bg_magenta: {
+    backgroundColor: '#FF00FF',
+  },
+  bg_orange: {
+    backgroundColor: '#FFA500',
   },
   container: {
-    marginVertical: 60,
-  },
-  text: {
     marginHorizontal: 20,
-    fontWeight: 'bold',
-    fontSize: 18,
+    marginVertical: 50
   },
+  myText: {
+    fontWeight: "900",
+    fontSize: 16,
+    paddingBottom: 5
+  }
 })
-
-
-
