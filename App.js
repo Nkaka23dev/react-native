@@ -1,6 +1,45 @@
-import { View, Text, StyleSheet, SafeAreaView, FlatList } from 'react-native'
+import { Text, StyleSheet, SafeAreaView, FlatList } from 'react-native'
 import React from 'react'
 import Box from './components/Box'
+
+export default function App() {
+  return (
+    <SafeAreaView >
+      <FlatList
+        style={styles.container}
+        data={COLORS} keyExtractor={item => item.colorName}
+        renderItem={({ item }) =>
+          (<Box colorName={item.colorName} hexColor={item.hexCode} />)}
+        ListHeaderComponent={<Text style={styles.myText}>List of all colors</Text>}
+        ListEmptyComponent={<Text>No Data Found</Text>}
+      />
+    </SafeAreaView>
+  )
+}
+
+const styles = StyleSheet.create({
+  bg_red: {
+    backgroundColor: 'red',
+  },
+  bg_blue: {
+    backgroundColor: '#0000FF',
+  },
+  bg_magenta: {
+    backgroundColor: '#FF00FF',
+  },
+  bg_orange: {
+    backgroundColor: '#FFA500',
+  },
+  container: {
+    marginHorizontal: 12,
+    marginVertical: 50
+  },
+  myText: {
+    fontWeight: "900",
+    fontSize: 16,
+    paddingBottom: 5
+  }
+})
 
 const COLORS = [
   { colorName: 'Base03', hexCode: '#002b36' },
@@ -20,50 +59,3 @@ const COLORS = [
   { colorName: 'Cyan', hexCode: '#2aa198' },
   { colorName: 'Green', hexCode: '#859900' },
 ];
-
-export default function App() {
-  return (
-    <SafeAreaView >
-      <FlatList data={COLORS} />
-      <View style={styles.container}>
-        <Text style={styles.myText}>Here are some boxes of different colors</Text>
-        <Box colorName="Red" hexColor="#FF0000" />
-        <Box colorName="blue" hexColor="#0000FF" />
-        <Box colorName="Magenta" hexColor="#FF00FF" />
-        <Box colorName="Orange" hexColor="#FFA500" />
-        <Box colorName="Red" hexColor="#FF0000" />
-        <Box colorName="blue" hexColor="#0000FF" />
-        <Box colorName="Magenta" hexColor="#FF00FF" />
-        <Box colorName="Orange" hexColor="#FFA500" />
-      </View>
-    </SafeAreaView>
-  )
-}
-
-const styles = StyleSheet.create({
-  box_text_color: {
-    color: 'white',
-    fontWeight: "600",
-  },
-  bg_red: {
-    backgroundColor: 'red',
-  },
-  bg_blue: {
-    backgroundColor: '#0000FF',
-  },
-  bg_magenta: {
-    backgroundColor: '#FF00FF',
-  },
-  bg_orange: {
-    backgroundColor: '#FFA500',
-  },
-  container: {
-    marginHorizontal: 20,
-    marginVertical: 50
-  },
-  myText: {
-    fontWeight: "900",
-    fontSize: 16,
-    paddingBottom: 5
-  }
-})

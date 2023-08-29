@@ -17,4 +17,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 4
     },
+    box_text_color: {
+        color: 'white',
+        fontWeight: "600",
+    },
 })
